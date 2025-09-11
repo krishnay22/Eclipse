@@ -2,7 +2,7 @@ import "./App.css";
 import ScrollVideo from "./components/Scrollvideo";
 import AppleCarousel from "./components/Carousel";
 import Visual from "./components/Visual";
-import Mask from "./components/mask";
+import FontEclipseMasking from "./components/FontEclipseMasking";
 import Info from "./components/Info";
 import Footer from "./components/Footer";
 import SafetyFeatures from "./components/Inner";
@@ -16,7 +16,7 @@ function App() {
       <AppleCarousel />
       <Visual />
       <Info />
-      <Mask />
+      <FontEclipseMasking />
       <SafetyFeatures />
       <IpadComparison />
       <Footer />
