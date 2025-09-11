@@ -2,7 +2,7 @@ import "./App.css";
 import ScrollVideo from "./components/Scrollvideo";
 import AppleCarousel from "./components/Carousel";
 import Visual from "./components/Visual";
-import FontEclipseMasking from "./components/FontEclipseMasking";
+import FontEclipseMasking from "./components/Mask";
 import Info from "./components/Info";
 import Footer from "./components/Footer";
 import SafetyFeatures from "./components/Inner";
