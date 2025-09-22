@@ -16,7 +16,7 @@ function App() {
       <AppleCarousel />
       <Visual />
       <Info />
-      <FontEclipseMasking />
+      {/* <FontEclipseMasking /> */}
       <SafetyFeatures />
       <IpadComparison />
       <Footer />

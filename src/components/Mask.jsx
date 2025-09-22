@@ -9,6 +9,27 @@ const FontEclipseMasking = () => {
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
 
   useEffect(() => {
+    // Add styles to hide scrollbar globally
+    const style = document.createElement("style");
+    style.textContent = `
+      /* Hide scrollbar for webkit browsers (Chrome, Safari) */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      /* Hide scrollbar for Firefox */
+      html {
+        scrollbar-width: none;
+      }
+      
+      /* Ensure scroll functionality remains */
+      body {
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+    `;
+    document.head.appendChild(style);
     // Load Google Font
     const fontLink = document.createElement("link");
     fontLink.href =
