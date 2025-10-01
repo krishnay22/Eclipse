@@ -1,42 +1,44 @@
 const Info = () => {
   return (
-    <div className="bg-black text-white min-h-screen flex items-center justify-center px-30">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-16 text-left">
-          <h1 className="text-7xl md:text-8xl lg:text-7xl font-bold tracking-tight mb-8">
+    <div className="bg-black text-white min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-30">
+      <div className="max-w-6xl mx-auto py-8 sm:py-12 lg:py-0">
+        <div className="mb-8 sm:mb-12 lg:mb-16 text-left">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 lg:mb-8">
             Enter the Future.
           </h1>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-24 items-start">
           {/* Left Column - Description */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
-              <span className="text-gray-400 text-xl">Introducing </span>
-              <span className="text-white text-2xl md:text-3xl font-semibold block mt-2">
+              <span className="text-gray-400 text-lg sm:text-xl">
+                Introducing{" "}
+              </span>
+              <span className="text-white text-xl sm:text-2xl md:text-3xl font-semibold block mt-2">
                 Horizon VR, the next step in immersive reality.
               </span>
-              <p className="text-gray-300 text-lg md:text-xl leading-relaxed mt-4">
-                Horizon VR redefines what’s possible in virtual experiences.
+              <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mt-3 sm:mt-4">
+                Horizon VR redefines what's possible in virtual experiences.
                 Step into breathtakingly real worlds powered by cutting-edge
-                optics, ultra-low latency, and spatial audio. Whether you’re
+                optics, ultra-low latency, and spatial audio. Whether you're
                 gaming, exploring, or creating, Horizon VR places you at the
                 center of every moment with seamless motion tracking and
                 cinematic clarity. <br />
                 <span className="font-bold text-white">
-                  This is not just VR — it’s presence.
+                  This is not just VR — it's presence.
                 </span>
               </p>
             </div>
 
-            <div className="pt-6">
+            <div className="pt-4 sm:pt-6">
               <a
                 href="#"
-                className="text-blue-400 hover:text-blue-300 text-xl inline-flex items-center group transition-colors duration-200"
+                className="text-blue-400 hover:text-blue-300 text-lg sm:text-xl inline-flex items-center group transition-colors duration-200"
               >
                 Discover Horizon VR
                 <svg
-                  className="ml-2 w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-200"
+                  className="ml-2 w-5 h-5 sm:w-6 sm:h-6 transform group-hover:translate-x-1 transition-transform duration-200"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -53,10 +55,10 @@ const Info = () => {
           </div>
 
           {/* Right Column - Performance Stats */}
-          <div className="space-y-10 text-sm md:text-base">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-10 text-sm md:text-base">
             <div>
               <div className="text-gray-400 mb-1">Up to</div>
-              <div className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-2">
                 8K clarity
               </div>
               <div className="text-gray-400">
@@ -66,7 +68,7 @@ const Info = () => {
 
             <div>
               <div className="text-gray-400 mb-1">As low as</div>
-              <div className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-2">
                 2ms latency
               </div>
               <div className="text-gray-400">
@@ -76,7 +78,7 @@ const Info = () => {
 
             <div>
               <div className="text-gray-400 mb-1">Over</div>
-              <div className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-2">
                 1000+ worlds
               </div>
               <div className="text-gray-400">

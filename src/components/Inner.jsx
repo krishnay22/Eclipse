@@ -3,7 +3,7 @@ import Image from "../../public/image/image02.png";
 const SafetyFeatures = () => {
   return (
     <div className="bg-black text-white min-h-screen flex items-center justify-center px-6 py-12">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left side: Image + Title */}
         <div>
           <p className="text-gray-400 text-sm mb-2">New standards</p>

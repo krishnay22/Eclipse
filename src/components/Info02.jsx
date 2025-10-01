@@ -2,10 +2,10 @@ const VRHeadsetComparison = () => {
   return (
     <div className="bg-[#1d1d1f] text-white min-h-screen px-6 py-12">
       {/* Header */}
-      <div className="max-w-7xl mx-auto flex items-center justify-between mb-12 px-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between mb-8 md:mb-12 px-4 md:px-12 gap-4 md:gap-0">
         {/* Left Section */}
         <div className="flex items-center gap-3">
-          <h1 className="text-3xl md:text-4xl font-semibold">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
             Explore the future of VR.
           </h1>
         </div>
@@ -13,7 +13,7 @@ const VRHeadsetComparison = () => {
         {/* Right Section */}
         <a
           href="#"
-          className="text-blue-400 hover:underline text-sm flex items-center gap-1"
+          className="text-blue-400 hover:underline text-sm flex items-center gap-1 self-start md:self-auto"
         >
           Explore all VR headsets
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -27,7 +27,7 @@ const VRHeadsetComparison = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
           <div>
             <img
-              src="/apple-vision-pro-vr-headset-sleek-white-design.jpg"
+              src="https://static.vecteezy.com/system/resources/previews/044/277/221/non_2x/young-girl-exploring-vast-opportunities-of-virtual-reality-with-vr-headset-on-isolated-transparent-background-free-png.png"
               alt="Apple Vision Pro"
               className="mx-auto w-48 md:w-60 mb-6"
             />
@@ -75,7 +75,7 @@ const VRHeadsetComparison = () => {
 
           <div>
             <img
-              src="/meta-quest-3-vr-headset-black-modern-gaming-design.jpg"
+              src="https://static.vecteezy.com/system/resources/previews/044/277/221/non_2x/young-girl-exploring-vast-opportunities-of-virtual-reality-with-vr-headset-on-isolated-transparent-background-free-png.png"
               alt="Meta Quest 3"
               className="mx-auto w-48 md:w-60 mb-6"
             />

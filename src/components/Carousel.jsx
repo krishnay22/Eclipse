@@ -105,13 +105,13 @@ const AppleCarousel = () => {
     };
   }, [nextSlide, prevSlide]);
 
-  // --- Intersection Observer (50%) ---
+  // --- Intersection Observer (70%) ---
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { root: null, rootMargin: "0px", threshold: 0.7 } // ✅ 50%
+      { root: null, rootMargin: "0px", threshold: 0.7 }
     );
 
     if (carouselRef.current) observer.observe(carouselRef.current);
@@ -142,14 +142,14 @@ const AppleCarousel = () => {
 
   return (
     <>
-      <div className="bg-[#161617] w-full h-30"></div>
+      <div className="bg-[#161617] w-full h-20 md:h-30"></div>
       <div
         ref={carouselRef}
         className="relative w-full min-h-screen bg-[#161617] overflow-hidden select-none font-sans"
       >
         {/* Header */}
-        <div className="absolute top-8 left-[80px] z-20">
-          <h1 className="text-4xl md:text-6xl font-semibold text-[#8a8a8a] mb-6">
+        <div className="absolute top-4 left-4 sm:top-6 sm:left-8 md:top-8 md:left-[80px] z-20 px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold text-[#8a8a8a] mb-4 md:mb-6">
             Get the highlights.
           </h1>
         </div>
@@ -166,9 +166,16 @@ const AppleCarousel = () => {
           onTouchEnd={handleDragEnd}
         >
           <div
-            className="flex items-start pt-32 pl-[80px] transition-transform duration-700 ease-in-out"
+            className="flex items-start pt-20 sm:pt-24 md:pt-32 pl-4 sm:pl-8 md:pl-[80px] transition-transform duration-700 ease-in-out"
             style={{
-              transform: `translateX(-${currentSlide * 330}px)`,
+              transform: `translateX(-${
+                currentSlide *
+                (window.innerWidth < 640
+                  ? window.innerWidth * 0.85
+                  : window.innerWidth < 768
+                  ? 280
+                  : 330)
+              }px)`,
             }}
           >
             {slides.map((slide, index) => (
@@ -176,12 +183,17 @@ const AppleCarousel = () => {
                 key={slide.id}
                 className="flex-shrink-0 transition-all duration-500"
                 style={{
-                  width: "420px",
-                  marginRight: "20px",
+                  width:
+                    window.innerWidth < 640
+                      ? `${window.innerWidth * 0.8}px`
+                      : window.innerWidth < 768
+                      ? "260px"
+                      : "420px",
+                  marginRight: window.innerWidth < 640 ? "20px" : "20px",
                   opacity: currentSlide === index ? 1 : 0.5,
                 }}
               >
-                <div className="w-full aspect-[3/4] rounded-3xl overflow-hidden">
+                <div className="w-full aspect-[3/4] rounded-2xl md:rounded-3xl overflow-hidden">
                   <img
                     src={slide.image}
                     alt={`Slide ${slide.id}`}
@@ -196,22 +208,22 @@ const AppleCarousel = () => {
 
       {/* Bottom Controls */}
       <div
-        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-6 transition-all duration-300 ease-out ${
+        className={`fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 sm:gap-4 md:gap-6 transition-all duration-300 ease-out ${
           isInView
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-8 pointer-events-none"
         }`}
       >
         {/* Dot Indicators */}
-        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-full px-4 py-4">
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-black/30 backdrop-blur-sm rounded-full px-3 py-3 sm:px-4 sm:py-4">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? "bg-white w-6"
-                  : "bg-white/50 hover:bg-white/70"
+                  ? "bg-white w-5 sm:w-6"
+                  : "bg-white/50 hover:bg-white/70 w-2"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -221,18 +233,18 @@ const AppleCarousel = () => {
         {/* Play/Pause Button */}
         <button
           onClick={togglePlayPause}
-          className="bg-black/30 backdrop-blur-sm rounded-full p-3 text-white hover:bg-black/50 transition-colors"
+          className="bg-black/30 backdrop-blur-sm rounded-full p-2.5 sm:p-3 text-white hover:bg-black/50 transition-colors"
           aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
         >
           {isPlaying ? (
-            <Pause className="w-4 h-4" />
+            <Pause className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           ) : (
-            <Play className="w-4 h-4 ml-0.5" />
+            <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-0.5" />
           )}
         </button>
       </div>
 
-      <div className="bg-[#161617] w-full h-40"></div>
+      <div className="bg-[#161617] w-full h-20 sm:h-32 md:h-40"></div>
     </>
   );
 };

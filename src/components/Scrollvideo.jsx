@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 export default function AutoPlayVideo() {
   const videoRef = useRef(null);
-  // ✅ 1. State to control the visibility of the content
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
@@ -13,30 +12,26 @@ export default function AutoPlayVideo() {
       });
     }
 
-    // ✅ 2. Set a timer to show the content after 6 seconds
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 6000); // 6000 milliseconds = 6 seconds
+    }, 6000);
 
-    // ✅ 3. Cleanup function to clear the timer if the component unmounts
     return () => clearTimeout(timer);
-  }, []); // The empty array [] ensures this effect runs only once.
+  }, []);
 
   return (
     <>
-      <div className="bg-black h-screen min-h-screen flex items-start justify-center">
+      <div className="bg-black h-screen min-h-screen flex items-start justify-center pt-8 md:pt-0">
         <section
+          className="w-[95%] md:w-[85%] lg:w-[75%] h-[60vh] md:h-[75vh] lg:h-[83vh]"
           style={{
             position: "relative",
-            width: "75%",
-            height: "83vh",
             background: "#000",
           }}
         >
           <video
             ref={videoRef}
             src="/video/Vr.mp4"
-            // ✅ Muted is essential for autoplay to work in most browsers.
             muted
             playsInline
             preload="auto"
@@ -46,45 +41,43 @@ export default function AutoPlayVideo() {
         </section>
         <div
           style={{
-            // Positioning for the whole group
             position: "absolute",
             bottom: "5%",
             left: "50%",
             transform: "translateX(-50%)",
             zIndex: 10,
-            // Layout for items inside (text and button)
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "1.5rem", // Space between the text and the button
-            // Fade-in animation logic
-            opacity: showContent ? 1 : 0, // Controlled by state
-            transition: "opacity 2s ease-in-out", // Smooth transition
+            gap: "1.5rem",
+            opacity: showContent ? 1 : 0,
+            transition: "opacity 2s ease-in-out",
           }}
         >
           {/* Neon Text */}
           <h2
+            className="text-xl md:text-2xl lg:text-3xl px-4"
             style={{
               color: "#fff",
               textAlign: "center",
-              fontSize: "1.8rem",
               fontWeight: "600",
-              textShadow: " 0 0 10px #fff, 0 0 20px #fff",
+              textShadow: "0 0 10px #fff, 0 0 20px #fff",
             }}
           >
             Vision Of The Future.
           </h2>
 
-          {/* Tailwind CSS Button */}
+          {/* Button */}
           <button
             className="
               bg-transparent           
-              border-1 border-white      
-              text-white                 
+              border border-white      
+              text-white
+              text-sm md:text-base                 
               font-bold                  
               uppercase                  
               tracking-wider             
-              py-3 px-8                  
+              py-2 px-6 md:py-3 md:px-8                  
               rounded-full               
               transition-colors          
               duration-300               
