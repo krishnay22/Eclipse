@@ -56,7 +56,7 @@ export default function AutoPlayVideo() {
         >
           {/* Neon Text */}
           <h2
-            className="text-xl md:text-2xl lg:text-3xl px-4"
+            className="text-lg md:text-2xl lg:text-3xl whitespace-nowrap"
             style={{
               color: "#fff",
               textAlign: "center",

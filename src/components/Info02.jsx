@@ -101,8 +101,8 @@ const VRHeadsetComparison = () => {
               From $499 or $41.58/mo. for 12 mo.†
             </p>
             <div className="mt-4">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm">
-                Learn more
+              <button className="text-sm text-gray-400">
+                Currently viewing
               </button>
               <a
                 href="#"
